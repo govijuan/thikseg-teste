@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { AppFormComponent } from './component.app-form';
 
 @Component({
 	selector: 'app',
-	template: '<h1>Teste Javascript para ThinkSeg</h1>'
+	templateUrl: './partials/app.html'
 })
 
 export class AppComponent {}

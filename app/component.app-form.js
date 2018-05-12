@@ -11,24 +11,25 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var AppComponent;
+    var AppFormComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            AppComponent = class AppComponent {
+            AppFormComponent = class AppFormComponent {
             };
-            AppComponent = __decorate([
+            AppFormComponent = __decorate([
                 core_1.Component({
-                    selector: 'app',
-                    templateUrl: './partials/app.html'
+                    selector: 'app-form',
+                    templateUrl: 'partials/app-form.html',
+                    inputs: ['questions']
                 }), 
                 __metadata('design:paramtypes', [])
-            ], AppComponent);
-            exports_1("AppComponent", AppComponent);
+            ], AppFormComponent);
+            exports_1("AppFormComponent", AppFormComponent);
         }
     }
 });
-//# sourceMappingURL=component.app.js.map
+//# sourceMappingURL=component.app-form.js.map

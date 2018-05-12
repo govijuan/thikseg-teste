@@ -1,0 +1,108 @@
+/* ====================
+   ** General Styles **
+   ==================== */
+@import url("http://fonts.googleapis.com/css?family=Roboto");
+
+body {
+  background: #332f35;
+  font-family: roboto;
+  color: #ccc8ce;
+  text-align: center;
+}
+.main-content{
+	margin: 0;
+	padding: 20px;
+}
+
+h1.titulo-app{
+	text-align: center;
+}
+.cool-icon{
+	width: 40px;
+	display: inline-block;
+}
+@media (max-width: 767px){
+	h1.titulo-app{ font-size: 25px }
+}
+@media (min-width: 768px) and (max-width: 991px){
+
+}
+@media (min-width: 992px) and (max-width: 1199px){
+
+}
+@media (min-width: 1200px){
+
+}
+
+@media (min-width: 768px){
+	h1.titulo-app{
+		font-size: 30px
+	}
+}
+
+/* =================
+   ** Form Styles **
+   ================= */
+
+.question-txt{
+	display: inline-block;
+}
+input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
+.radio-group > label{
+	margin-right: -4px;
+}
+.quesistions-form-wrap{
+	padding: 30px 0;
+	max-width: 320px;
+	left: calc(50% - 160px);
+	position: relative;
+}
+.question-wrap{
+	padding: 20px 0
+}
+.question-txt{
+	color: #9a929e;
+	font-weight: bold;
+}
+.btn{
+	padding: 5px 20px;
+	border-radius: 10px;
+	font-weight: bold;
+	border: solid 3px #675f6b;
+	background: #675f6b;
+	color: #ccc8ce;
+	font-size: 16px;
+	margin: 25px 0 0;
+}
+.btn:hover, .btn:active{
+	background: #5C6771;
+	border-color: #5C6771;
+}
+label {
+  color: #9a929e;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 20px;
+}
+
+input[type=radio]:checked + label {
+  color: #ccc8ce;
+  background: #675f6b;
+}
+
+label + input[type=radio] + label {
+  border-left: solid 3px #675f6b;
+}
+
+.radio-group {
+  border: solid 3px #675f6b;
+  display: inline-block;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
