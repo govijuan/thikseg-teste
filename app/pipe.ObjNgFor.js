@@ -1,4 +1,4 @@
-System.register(['@angular/core', './questions.service'], function(exports_1, context_1) {
+System.register(["@angular/core"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,29 +10,35 @@ System.register(['@angular/core', './questions.service'], function(exports_1, co
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, questions_service_1;
-    var AppComponent;
+    var core_1;
+    var ObjNgFor;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (questions_service_1_1) {
-                questions_service_1 = questions_service_1_1;
             }],
         execute: function() {
-            AppComponent = class AppComponent {
+            ObjNgFor = class ObjNgFor {
+                transform(value, args = null) {
+                    //return Object.keys(value).map((key)=> Object.assign({ key }, value[key));
+                    if (!value) {
+                        return value;
+                    }
+                    let keys = [];
+                    for (let key in value) {
+                        keys.push({ key: key, value: value[key] });
+                    }
+                    return keys;
+                }
             };
-            AppComponent = __decorate([
-                core_1.Component({
-                    selector: 'app',
-                    templateUrl: './partials/app.html',
-                    providers: [questions_service_1.QuestionsService]
+            ObjNgFor = __decorate([
+                core_1.Pipe({
+                    name: 'objNgFor'
                 }), 
                 __metadata('design:paramtypes', [])
-            ], AppComponent);
-            exports_1("AppComponent", AppComponent);
+            ], ObjNgFor);
+            exports_1("ObjNgFor", ObjNgFor);
         }
     }
 });
-//# sourceMappingURL=component.app.js.map
+//# sourceMappingURL=pipe.ObjNgFor.js.map

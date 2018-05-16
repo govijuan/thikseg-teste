@@ -1,14 +1,14 @@
 {
-  "name": "learn-angular",
+  "name": "thinkseg-test",
   "version": "1.0.0",
-  "author": "Ray Villalobos",
-  "description": "This project is the repository for my Learn Angular course",
+  "author": "Juan Carlos Coral",
+  "description": "Repositório para teste da Thinkseg",
   "repository": {
     "type": "git",
     "url": "https://github.com/planetoftheweb/learnangular.git"
   },
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" "
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server -c bs-config.js\" "
   },
   "dependencies": {
     "@angular/common": "2.0.0",
@@ -29,6 +29,7 @@
     "@types/core-js": "^0.9.34",
     "@types/node": "^6.0.41",
     "concurrently": "2.2.0",
+    "http-proxy-middleware": "^0.18.0",
     "lite-server": "2.2.2",
     "rimraf": "2.5.4",
     "typescript": "2.0.2"

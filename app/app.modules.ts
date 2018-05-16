@@ -4,14 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './component.app';
-import { AppFormComponent } from './component.app-form'
+import { AppFormComponent } from './component.app-form';
+import { ObjNgFor } from './pipe.ObjNgFor';
 
 @NgModule({
 	imports: [
-		BrowserModule, FormsModule
+		BrowserModule, FormsModule, HttpModule
 	],
 	declarations: [
-		AppComponent, AppFormComponent
+		AppComponent, AppFormComponent, ObjNgFor
 	],
 	bootstrap: [
 		AppComponent
