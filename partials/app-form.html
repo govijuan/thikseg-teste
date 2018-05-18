@@ -1,19 +1,9 @@
-<div class="quesistions-form-wrap" *ngFor="let question of questions.questions | objNgFor; let i = index">
-	<div class="question-wrap {{question.key}}" >
-		<div class="question-txt">{{question.value.label}}</div>
-		<div class="radio-group radio-group-{{i}}">
-			<input id="" type="radio" name="" value="">
-			<label for=""></label> 
-		</div>
+<div class="quesistions-form-wrap" *ngFor="let question of questions">
+	<div class="question-wrap {{question.input_id}}" >
+		<div class="question-txt">{{question.label}}</div>
+		<select [name]="question.name" [id]="question.name" >
+			<option *ngFor="let opt of question.options" [value]="opt.value">{{opt.label}}</option>
+		</select>
 	</div>
-	<!--<div class="question-wrap">
-		<div class="question-txt">Você curte cerveja?</div>
-		<div class="radio-group">
-			<input id="gosta_cerveja_sim" type="radio" name="gosta_cerveja" value="1">
-			<label for="gosta_cerveja_sim">Sim!</label>
-			<input id="gosta_cerveja_nao" type="radio" name="gosta_cerveja" value="0">
-			<label for="gosta_cerveja_nao">Não</label>
-		</div>
-	</div> -->
 </div>
 <button class="btn">Enviar Respostas</button>

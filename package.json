@@ -5,7 +5,7 @@
   "description": "Repositório para teste da Thinkseg",
   "repository": {
     "type": "git",
-    "url": "https://github.com/planetoftheweb/learnangular.git"
+    "url": ""
   },
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server -c bs-config.js\" "
