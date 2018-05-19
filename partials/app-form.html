@@ -1,9 +1,10 @@
 <div class="quesistions-form-wrap" *ngFor="let question of questions">
 	<div class="question-wrap {{question.input_id}}" >
 		<div class="question-txt">{{question.label}}</div>
-		<select [name]="question.name" [id]="question.name" >
+		<select [name]="question.name" [id]="question.name" (change)="addAnswer($event)">
+			<option selected="selected">-- Escolha uma opção --</option>
 			<option *ngFor="let opt of question.options" [value]="opt.value">{{opt.label}}</option>
 		</select>
 	</div>
 </div>
-<button class="btn">Enviar Respostas</button>
+<button (click)="sendAnswers()"  class="btn">Enviar Respostas</button>
