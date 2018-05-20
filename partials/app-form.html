@@ -1,10 +1,16 @@
-<div class="quesistions-form-wrap" *ngFor="let question of questions">
-	<div class="question-wrap {{question.input_id}}" >
-		<div class="question-txt">{{question.label}}</div>
-		<select [name]="question.name" [id]="question.name" (change)="addAnswer($event)">
-			<option selected="selected">-- Escolha uma opção --</option>
-			<option *ngFor="let opt of question.options" [value]="opt.value">{{opt.label}}</option>
-		</select>
+<div *ngIf="answersSent == false"class="questions-form-wrap">
+	<div class="quesistion-wrap" *ngFor="let question of questions">
+		<div class="question-wrap {{question.input_id}}" >
+			<div class="question-txt">{{question.label}}</div>
+			<select [name]="question.name" [id]="question.name" (change)="addAnswer($event)">
+				<option selected="selected">-- Escolha uma opção --</option>
+				<option *ngFor="let opt of question.options" [value]="opt.value">{{opt.label}}</option>
+			</select>
+		</div>
 	</div>
+	<button (click)="sendAnswers()"  class="btn">Enviar Respostas</button>
 </div>
-<button (click)="sendAnswers()"  class="btn">Enviar Respostas</button>
+<div class="cool-level-txt-wrap" *ngIf="answersSent">
+	<div class="cool-level-txt">Seu nivel de 'Coolness' é de {{coolLevelObj.cool_level}}</div>
+	<button (click)="appRefresh()">testar de novo</button>
+</div>

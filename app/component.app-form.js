@@ -26,6 +26,8 @@ System.register(['@angular/core', './questions.service'], function(exports_1, co
                     this._questionsService = _questionsService;
                     this.questions = [];
                     this.answers = {};
+                    this.postObj = {};
+                    this.answersSent = false;
                 }
                 ngOnInit() {
                     this._questionsService.getQuestions()
@@ -38,10 +40,26 @@ System.register(['@angular/core', './questions.service'], function(exports_1, co
                     }, error => alert(error), () => console.log(JSON.stringify(this.questions)));
                 }
                 addAnswer(event) {
-                    //console.log(event.target.value);
-                    //console.log(event.target.id);
                     this.answers[event.target.id] = event.target.value;
                     console.log(JSON.stringify(this.answers));
+                }
+                sendAnswers() {
+                    this.postObj.answers = this.answers;
+                    let returnPostanswer = this._questionsService.postAnswers(this.postObj)
+                        .subscribe((ResPostAnswresData) => {
+                        console.log(JSON.stringify(ResPostAnswresData));
+                        this.coolLevelObj = ResPostAnswresData;
+                        this.answersSent = true;
+                    });
+                    console.log(JSON.stringify(this.postObj));
+                    return returnPostanswer;
+                    //console.log(JSON.stringify(answerPostRetur))
+                }
+                appRefresh() {
+                    this.answersSent = false;
+                    this.answers = {};
+                    this.postObj = {};
+                    //Location.reload();
                 }
             };
             AppFormComponent = __decorate([

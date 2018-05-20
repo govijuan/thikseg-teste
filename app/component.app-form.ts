@@ -10,7 +10,10 @@ import { QuestionsService } from './questions.service';
 
 export class AppFormComponent implements OnInit {
 	questions = [];
-	answers = {};
+	answers:any = {};
+	postObj:any ={};
+	coolLevelObj:any;
+	answersSent:boolean = false;
 	
 	constructor(private _questionsService: QuestionsService){}
 	ngOnInit(){
@@ -28,9 +31,31 @@ export class AppFormComponent implements OnInit {
 		)
 	}
 	addAnswer(event:any){
-		//console.log(event.target.value);
-		//console.log(event.target.id);
 		this.answers[event.target.id] = event.target.value;
 		console.log(JSON.stringify(this.answers));
+	}
+	sendAnswers(){
+		this.postObj.answers = this.answers;
+		let returnPostanswer = this._questionsService.postAnswers(this.postObj)
+		.subscribe( 
+			(ResPostAnswresData) => {
+				console.log(JSON.stringify(ResPostAnswresData));
+				
+					this.coolLevelObj = ResPostAnswresData;
+					this.answersSent = true;
+
+				
+			}
+			
+		)
+		console.log(JSON.stringify(this.postObj));
+		return returnPostanswer;
+		//console.log(JSON.stringify(answerPostRetur))
+	}
+	appRefresh(){
+		this.answersSent = false;
+		this.answers = {};
+		this.postObj = {};
+		//Location.reload();
 	}
 }

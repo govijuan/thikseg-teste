@@ -26,11 +26,17 @@ System.register(['@angular/core', '@angular/http', 'rxjs/add/operator/map'], fun
                 constructor(_http) {
                     this._http = _http;
                     this._url = "https://thinkseg-javascript-test.herokuapp.com/config";
+                    this._post_url = "https://thinkseg-javascript-test.herokuapp.com/quotations";
                 }
                 getQuestions() {
                     let jsonData = this._http.get(this._url)
                         .map((response) => response.json());
                     return jsonData;
+                }
+                postAnswers(obj) {
+                    let postResponse = this._http.post(this._post_url, obj)
+                        .map((postResponse) => postResponse.json());
+                    return postResponse;
                 }
             };
             QuestionsService = __decorate([
