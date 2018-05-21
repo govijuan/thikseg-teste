@@ -50,22 +50,20 @@ System.register(['@angular/core', './questions.service'], function(exports_1, co
                         console.log(JSON.stringify(ResPostAnswresData));
                         this.coolLevelObj = ResPostAnswresData;
                         this.answersSent = true;
+                        //this.doAnimation();
                     });
                     console.log(JSON.stringify(this.postObj));
                     return returnPostanswer;
-                    //console.log(JSON.stringify(answerPostRetur))
                 }
                 appRefresh() {
                     this.answersSent = false;
                     this.answers = {};
                     this.postObj = {};
-                    //Location.reload();
                 }
             };
             AppFormComponent = __decorate([
                 core_1.Component({
                     selector: 'app-form',
-                    //pipes: [objNgFor],
                     templateUrl: 'partials/app-form.html',
                     providers: [questions_service_1.QuestionsService]
                 }), 

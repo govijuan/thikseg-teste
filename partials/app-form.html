@@ -12,5 +12,28 @@
 </div>
 <div class="cool-level-txt-wrap" *ngIf="answersSent">
 	<div class="cool-level-txt">Seu nivel de 'Coolness' é de {{coolLevelObj.cool_level}}</div>
-	<button (click)="appRefresh()">testar de novo</button>
+	<div id="beer-animation-container">
+		<div class="pour"></div>
+		<div id="beaker">
+			<div class="beer-foam">
+				<div class="foam-1"></div>
+				<div class="foam-2"></div>
+				<div class="foam-3"></div>
+				<div class="foam-4"></div>
+				<div class="foam-5"></div>
+				<div class="foam-6"></div>
+				<div class="foam-7"></div>
+			</div>
+			
+			<div id="liquid">
+				
+				<div class="bubble bubble1"></div>
+				<div class="bubble bubble2"></div>
+				<div class="bubble bubble3"></div>
+				<div class="bubble bubble4"></div>
+				<div class="bubble bubble5"></div>
+			</div>
+		</div>
+	</div>
+	<button (click)="appRefresh()" class="btn">testar de novo</button>
 </div>

@@ -3,7 +3,6 @@ import { QuestionsService } from './questions.service';
 
 @Component({
 	selector: 'app-form',
-	//pipes: [objNgFor],
 	templateUrl: 'partials/app-form.html',
 	providers: [QuestionsService]
 })
@@ -40,22 +39,20 @@ export class AppFormComponent implements OnInit {
 		.subscribe( 
 			(ResPostAnswresData) => {
 				console.log(JSON.stringify(ResPostAnswresData));
-				
-					this.coolLevelObj = ResPostAnswresData;
-					this.answersSent = true;
-
-				
+				this.coolLevelObj = ResPostAnswresData;
+				this.answersSent = true;
+				//this.doAnimation();
 			}
 			
 		)
 		console.log(JSON.stringify(this.postObj));
 		return returnPostanswer;
-		//console.log(JSON.stringify(answerPostRetur))
+	
 	}
+
 	appRefresh(){
 		this.answersSent = false;
 		this.answers = {};
 		this.postObj = {};
-		//Location.reload();
 	}
 }
